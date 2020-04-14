@@ -1,17 +1,17 @@
-###Use Case: Get the top markets for a spot or multiple spots.
+### Use Case: Get the top markets for a spot or multiple spots.
 
 As seen in the Geopath Insights Suite, it's possible to find the highest indexing market for a piece of inventory. This can help our members identify new business opportunities and can be accessed by the Geopath API. 
 
-#####In both endpoints the markets are limited to DMA or ZIP. There are also extremely long tails of data that detail tiny percentages of audience that come from distant markets. Please keep these outliers in mind as you request data and analyze the response.
+##### In both endpoints the markets are limited to DMA or ZIP. There are also extremely long tails of data that detail tiny percentages of audience that come from distant markets. Please keep these outliers in mind as you request data and analyze the response.
 
-#####For a single spot:
+##### For a single spot:
 
-######Call:
+###### Call:
 _This GET call is for the top zip codes for the specific spot id. The page size is limited to the top 100 on the first page._
 ```
 https://api.geopath.org/v2.1/inventory/measures/homes/30970663?reporting_level=ZIP&page_size=100
 ```
-######Response:
+###### Response:
 _The response includes a pagination object detailing home many markets were returned. Additional pages can be requested. The object also includes the date the market and percentage was derived, which corresponds to the most recent impression calculation date. This response has been truncated for space_
 ```json
 {
@@ -54,8 +54,8 @@ _The response includes a pagination object detailing home many markets were retu
     ]
 }
 ```
-#####For a list of spots using the ```https://api.geopath.org/v2.1/inventory/measures/homes/spots``` endpoint
-######Call:
+##### For a list of spots using the ```https://api.geopath.org/v2.1/inventory/measures/homes/spots``` endpoint
+###### Call:
 _This POST call is for the top DMAs for a list of spots . The page size is limited to the top 100 on the first page._
 ```json
 {
@@ -66,7 +66,7 @@ _This POST call is for the top DMAs for a list of spots . The page size is limit
     "reporting_level": "DMA"
 }
 ```
-######Response:
+###### Response:
 _The response includes each spot as an object. The data per spot is identical to the GET endpoint. The objects list all the homes for a single spot before proceeding to the next spot, so be sure to check all the pages returned to ensure all data is received._
 ```json
 {

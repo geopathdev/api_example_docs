@@ -1,14 +1,14 @@
-##Use Case: Bulk request to get inventory and measures information
+## Use Case: Bulk request to get inventory and measures information
 
-####Many users want to be able to get a dataset to use within their own systems. This can be accomplished by using the ```inventory/search``` endpoint. By Omitting many of the available search parameters, the call will return all "Published Measured" inventory available.Due to the fact that no segment or target market is supplied, the measures will default to 0+ Global Impressions. Since the max return of the search endpoint is 1000 spots, the call will have to repeated using different pages.
+#### Many users want to be able to get a dataset to use within their own systems. This can be accomplished by using the ```inventory/search``` endpoint. By Omitting many of the available search parameters, the call will return all "Published Measured" inventory available.Due to the fact that no segment or target market is supplied, the measures will default to 0+ Global Impressions. Since the max return of the search endpoint is 1000 spots, the call will have to repeated using different pages.
 
-######Call: _This first call sets no search parameters to return all inventory. The page size is set to the maximum to increase call use efficiency_
+###### Call: _This first call sets no search parameters to return all inventory. The page size is set to the maximum to increase call use efficiency_
 ```json
 {
 "page_size":1000
 }
 ```
-######Response: _The response includes complete inventory objects for each spot. Below, the content under "inventory_items" has been omitted for space._
+###### Response: _The response includes complete inventory objects for each spot. Below, the content under "inventory_items" has been omitted for space._
 ```json
 {
     "inventory_summary": {
@@ -28,14 +28,14 @@
     }
 }
 ```
-######Call: _Since the first response shows 516 pages for 515,802 spots, 515 more calls are required to receive the full dataset for the 0+ Global Market impressions. The second call would be:_
+###### Call: _Since the first response shows 516 pages for 515,802 spots, 515 more calls are required to receive the full dataset for the 0+ Global Market impressions. The second call would be:_
 ```json
 {
 "page": 2,
 "page_size":1000
 }
 ```
-######Response: _The response is the same, but with a new page of data.the content under "inventory_items" has been omitted for space._
+###### Response: _The response is the same, but with a new page of data.the content under "inventory_items" has been omitted for space._
 ```json
 {
     "inventory_summary": {
@@ -56,7 +56,7 @@
 }
 ```
 
-####This can be done multiple times for different audience / market combinations by adding additional search parameters. The measures object of the inventory includes impressions and population information for global and target audiences and markets as well as reach, effective reach, and effective frequency.
+#### This can be done multiple times for different audience / market combinations by adding additional search parameters. The measures object of the inventory includes impressions and population information for global and target audiences and markets as well as reach, effective reach, and effective frequency.
 ```json
 "spot_id": 30974557,
 "measures": {
@@ -88,7 +88,7 @@
                             "eff_reach_pct": 0.02661780251
                         }
 ```
-######Call: 
+###### Call: 
 _Adding the parameter period_days to the call will adjust the measures accordingly_
 ```json
 {
@@ -97,7 +97,7 @@ _Adding the parameter period_days to the call will adjust the measures according
 "period_days":14
 }
 ```
-######Response: 
+###### Response: 
 _This is the measures object for the same spot after changing the period_days from the default of 7 to 14_
 ```json
 "measures": {

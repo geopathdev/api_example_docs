@@ -2,9 +2,9 @@
 
 Often there are cases where the specific inventory isn't required, but it's important to find inventory that matches to the best market or target audience. 
 
-###Best Market: 
-#####The inventory search endpoint is utilized to find the top spots per market. Currently, only DMA, CBSA and County level impressions are available. Inventory can be filtered to smaller markets like ZIP Code. 
-######Call:
+### Best Market: 
+##### The inventory search endpoint is utilized to find the top spots per market. Currently, only DMA, CBSA and County level impressions are available. Inventory can be filtered to smaller markets like ZIP Code. 
+###### Call:
 _This call asks for the spots sorted by the percent of in market impressions. It uses the target_geography_list to specify the county it's looking in, and then further narrows the inventory that is within a specific zip code. The measures_range_list parameter is used to limit the response to inventory that actually produces impressions in the market asked for (if this is not provided the response will include all inventory with the majority producing NULL in market impressions.)_
 ```json
 {
@@ -28,7 +28,7 @@ _This call asks for the spots sorted by the percent of in market impressions. It
     "page_size": 1000
 }
 ```
-######Response:
+###### Response:
 _The response is the standard inventory search response, but sorted to the specifications in the call. This response truncates frame details for space._
 ```json
 {
@@ -154,9 +154,9 @@ _The response is the standard inventory search response, but sorted to the speci
     }
 }
 ```
-###Best Audience:
-#####The inventory search endpoint is utilized to find the top spots for a specific audience segment. This search can be can limited to a specific list of inventory, or inventory owned by specific company etc.... Inventory can also be filtered by a minimum number of target impressions to limit the response. 
-######Call:
+### Best Audience:
+##### The inventory search endpoint is utilized to find the top spots for a specific audience segment. This search can be can limited to a specific list of inventory, or inventory owned by specific company etc.... Inventory can also be filtered by a minimum number of target impressions to limit the response. 
+###### Call:
 _This call asks for the spots sorted by the index of the target impressions. It uses the inventory_market_list to specify the DMA when inventory is located. The measures_range_list parameter is used to limit the response to inventory that produces over 1000 impressions of the audience asked for (if this is not provided the response will include all inventory with some producing very low impressions for the audience.)_
 ```json
 {
@@ -179,7 +179,7 @@ _This call asks for the spots sorted by the index of the target impressions. It 
     "page_size": 1000
 }
 ```
-######Response:
+###### Response:
 _The response is the standard inventory search response, but sorted to the specifications in the call. This response truncates frame details for space._
 ```json
 {

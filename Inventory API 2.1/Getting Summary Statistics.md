@@ -1,10 +1,10 @@
-##Use Case: Search for Summary Inventory Statistics
+## Use Case: Search for Summary Inventory Statistics
 
 Using the `/inventory/summary/search` endpoint, you can search for summary statistics across a set of inventory. 
 
-####Sample: Search for summary of all impressions
+#### Sample: Search for summary of all impressions
 
-######Call:
+###### Call:
 _This call is asking for global 0+ impressions across all operators and media types._
 ```json
 {
@@ -22,7 +22,7 @@ _This call is asking for global 0+ impressions across all operators and media ty
      ]
  }
 ```
-######Response:
+###### Response:
 _The response total is 65 Billion impressions across 639K frames / 734K spots_
 ```json
 {
@@ -79,8 +79,8 @@ _The response total is 65 Billion impressions across 639K frames / 734K spots_
 
 
 _Adding an additional search parameter into the call can change this._
-####Sample: Search for summary of all impressions of a specific company.
-######Call
+#### Sample: Search for summary of all impressions of a specific company.
+###### Call
 _This call is asking for global 0+ impressions for a single operator across all their media types._
 ```json
 {
@@ -101,7 +101,7 @@ _This call is asking for global 0+ impressions for a single operator across all 
     ]
 }
 ```
-######Response:
+###### Response:
 _The response total is 1.3 Billion impressions across 64K frames / 75K spots_
 ```json
 {
@@ -156,8 +156,8 @@ _The response total is 1.3 Billion impressions across 64K frames / 75K spots_
 }
 ```
 
-####Sample: Very specific summary search.
-######Call
+#### Sample: Very specific summary search.
+###### Call
 _This call is asking for local market Hispanic Persons 25-44 impressions for two specific operators poster inventory that generate over 100,000 impressions in a specific market._
 ```json
 {
@@ -184,7 +184,7 @@ _This call is asking for local market Hispanic Persons 25-44 impressions for two
     ]
 }
 ```
-######Response:
+###### Response:
 _The response includes all the same previous information about total impressions that would be there if asking for global information, but also includes the narrower market information where the  total is 779 million impressions across 3.9K frames / 3.9K spots_
 ```json
 {
