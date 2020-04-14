@@ -1,9 +1,9 @@
-## Using the ```inventory/search``` endpoint
+##Using the ```inventory/search``` endpoint
 
-#### This endpoint is a powerful tool to identify OOH inventory that match a wide variety of criteria.
+####This endpoint is a powerful tool to identify OOH inventory that match a wide variety of criteria.
 
-##### Use Case: Get the top 100 frames for a specific operator and audience
-###### Call:
+#####Use Case: Get the top 100 frames for a specific operator and audience
+######Call:
 _This call is asking for the top 100 spots (by percent composition of the target as part of the overall impressions) for 18+ for a specific operator_
 ```json
 {
@@ -25,7 +25,7 @@ _This call is asking for the top 100 spots (by percent composition of the target
     "page_size": 100
 }
 ```
-###### Response:
+######Response:
 _The Response includes all inventory attributes for each **spot** at the end of the page there is a pagination object that details how many pages of responses there are to the query_
 ```json
 {
@@ -177,7 +177,7 @@ _The Response includes all inventory attributes for each **spot** at the end of 
 etc...
 ```
 
-###### Response (pagination object at end):
+######Response (pagination object at end):
 _The pagination object tells which page has been requested and the overall number of pages. The frames and spots are the overall number returned in the initial search and page size lists the maximum number of spots displayed._ 
 ```json
         "pagination": {
@@ -191,8 +191,8 @@ _The pagination object tells which page has been requested and the overall numbe
 }
 ```
 
-##### Use Case: Get inventory that has been updated in the past month.
-###### Call:
+#####Use Case: Get inventory that has been updated in the past month.
+######Call:
 _This call is specifying an updated_date_range of just dates, but can also include specific times (time in UTC). It is searching across all inventory_ 
 ```json
 {
@@ -211,7 +211,7 @@ _or_
     }
 }
 ```
-###### Response:
+######Response:
 _The search response is a paginated response like the first example_
 
 

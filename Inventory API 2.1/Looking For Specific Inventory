@@ -1,11 +1,11 @@
-## Use Case: Access details about a specific piece of inventory
+##Use Case: Access details about a specific piece of inventory
 
-#### There are several methods to access details about a specific piece of inventory. These first two examples read directly into the Geopath Inventory Database and return results that are always up to date. These calls will return information about inventory that is inactive or decomissioned if specificly given ids for it. 
-##### 1. Using the `/inventory/{frame_id}` endpoint to return information about a single frame record and it's children
-###### Call
+####There are several methods to access details about a specific piece of inventory. These first two examples read directly into the Geopath Inventory Database and return results that are always up to date. These calls will return information about inventory that is inactive or decommissioned if specifically given ids for it. 
+#####1. Using the `/inventory/{frame_id}` endpoint to return information about a single frame record and it's children.
+######Call
 _This is a GET call where you specify a frame id in the url_
 `https://api.geopath.org/v2.1/inventory/spot/30649897`
-###### Response:
+######Response:
 _The response only includes information about the Frame and any child spots. This example is a Digital Bulletin that includes 8 spots._
 ```json
 {
@@ -584,12 +584,12 @@ _The response only includes information about the Frame and any child spots. Thi
     "photos": []
 }
 ```
-##### 2. Using the `/inventory/spot/{spot_id}` endpoint to return only information about the spot
-###### Call:
+#####2. Using the `/inventory/spot/{spot_id}` endpoint to return only information about the spot.
+######Call:
 _This is a GET call where you specify a spot id in the url_
 `https://api.geopath.org/v2.1/inventory/spot/30649897`
-###### Response:
-_The response only includes information about the SPOT. It includes a link to the the FRAME record as the frame_uri key_
+######Response:
+_The response only includes information about the SPOT. It includes a link to the FRAME record as the frame_uri key_
 ```json
 {
     "id": 30649897,
@@ -657,9 +657,9 @@ _The response only includes information about the SPOT. It includes a link to th
     "total_msg_impressions": null
 }
 ```
-#### These next example utilize the POST search endpoints are reference a static table that is updated on a weekly basis when impressions are updated. These searches do not return inventory that is inactive or decomissioned even if explicitly asked for those frames
-##### 3. Using the ```inventory/search``` endpoint to post a list of one inventory id
-###### Call:
+#### These next example utilize the POST search endpoints are reference a static table that is updated on a weekly basis when impressions are updated. These searches do not return inventory that is inactive or decommissioned even if explicitly asked for those frames.
+#####3. Using the ```inventory/search``` endpoint to post a list of one inventory id.
+######Call:
 _This call specifies a frame_id_
 ```json
 {
@@ -669,7 +669,7 @@ _This call specifies a frame_id_
     ]
 }
 ```
-###### Response:
+######Response:
 _The response includes all 8 of the child spots, and is the same as the GET frame call_
 ```json
 {
@@ -1089,7 +1089,7 @@ _The response includes all 8 of the child spots, and is the same as the GET fram
 }
 ```
 
-###### Call:
+######Call:
 _This call specifies a spot_id_
 ```json
 {
@@ -1099,7 +1099,7 @@ _This call specifies a spot_id_
     ]
 }
 ```
-###### Response:
+######Response:
 _The response only includes detail for that single spot, but includes all the information about the parent frame_
 ```json
 {
@@ -1259,7 +1259,7 @@ _The response only includes detail for that single spot, but includes all the in
     }
 }
 ```
-###### Call:
+######Call:
 _This call specifies a plant_frame_id and an operator. This is not required, but since operators may use identical identifiers it helps to be as specific as possible. Including an inventory_market_list may also be warranted since some operators re-use identifiers across regions._
 ```json
 {
@@ -1272,7 +1272,7 @@ _This call specifies a plant_frame_id and an operator. This is not required, but
     ]
 }
 ```
-###### Response:
+######Response:
 _This response is identical to the GET frame and Search by frame_id response and included data on the 8 child spots. 
 ```json
 {
