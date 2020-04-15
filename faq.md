@@ -18,10 +18,11 @@
 
 ##### Q: How do I find the best _________ for inventory?
 ###### A: 
-  * Zip Code or DMA: 
-    * Using the GET ```https://api.geopath.org/v2.1/inventory/measures/homes``` endpoint
-    * Using the POST ```https://api.geopath.org/v2.1/inventory/measures/homes/spots``` endpoint
-  * Audience Segment:
-    * Using the ```https://api.geopath.org/v2.1/inventory/measures/summary/segments``` endpoint
+  * _Zip Code or DMA:_
+    * _Using the GET ```https://api.geopath.org/v2.1/inventory/measures/homes``` endpoint_
+    * _Using the POST ```https://api.geopath.org/v2.1/inventory/measures/homes/spots``` endpoint_
+  * _Audience Segment:_
+    * _Using the ```https://api.geopath.org/v2.1/inventory/measures/summary/segments``` endpoint_
 
-
+##### Q: How can I find a market ID to use in inventory searches
+###### A: _Using the ```https://api.geopath.org/v2.1/markets/search```  endpoint_
