@@ -10,7 +10,7 @@ _The GET call for hourly impressions requires two parameters get passed. hourly_
 ```https://api-staging.geopath.org/v2.1/inventory/spot/631042?hourly_measures=true&target_segment=2032```
 
 ###### Response:
-_The response includes total_msg_impressions for each hour of each day of the week as well as information about the spot._
+_The response includes total_msg_impressions (aka impressions per play) for each hour of each day of the week as well as information about the spot. This response is for a static piece of inventory._
 
 ```json
 {
@@ -266,3 +266,277 @@ _The response includes total_msg_impressions for each hour of each day of the we
     }
 }
 ```
+
+#### For digital inventory an additional step is required to understand the hourly impressions per spot.
+
+###### Call:
+_The call is the same, in the case the ID is for a digital spot_
+
+###### Response:
+_The Response is also the same format. An important change is that the share_of_voice is now reflective of its digital loop at .125 sov._
+```json
+{
+    "id": 45821,
+    "uri": "{{api.basepath}}/v2.1/inventory/spot/45821",
+    "publisher_unique_id": null,
+    "length": 8,
+    "full_motion": false,
+    "partial_motion": false,
+    "rotating": false,
+    "interactive": false,
+    "audio": false,
+    "share_of_voice": 0.125,
+    "plant_spot_id": "059472-A",
+    "created_dtm": "2019-08-13T16:23:00.000Z",
+    "updated_dtm": "2019-10-31T20:42:46.014Z",
+    "updated_desc": null,
+    "representations": [
+        {
+            "id": 35,
+            "updated_desc": null,
+            "representation_type": {
+                "id": 1,
+                "name": "Own",
+                "description": "the owner or leaseholder of an asset who may also manage that asset",
+                "updated_desc": null
+            },
+            "account": {
+                "id": 339,
+                "name": "Las Vegas",
+                "operator_code": "006",
+                "parent_account_id": 1,
+                "parent_account_name": "Clear Channel",
+                "updated_desc": null
+            }
+        }
+    ],
+    "measures": {
+        "measures_type": "Measures",
+        "period_days": 7,
+        "base_segment": "2032",
+        "target_segment": "2032",
+        "target_geo": "Defaulted to GLOBAL",
+        "market": "Defaulted to GLOBAL",
+        "index_comp_target": 100.0,
+        "pct_comp_pop_target_inmkt": 1.0,
+        "pct_comp_imp_target": 1.0,
+        "pct_comp_imp_target_inmkt": 1.0,
+        "freq_avg": 1.123343541,
+        "imp_target_inmkt": 491749.648359316,
+        "imp_target": 491749.648359316,
+        "imp_inmkt": 491749.648359316,
+        "imp": 491749.648359316,
+        "pct_imp_inmkt": 1.0,
+        "pct_imp_target_inmkt": 1.0,
+        "pop_inmkt": 329236175,
+        "pop_target_inmkt": 329236175,
+        "reach_pct": 0.1329608914,
+        "reach_net": 437755,
+        "trp": 0.1493607585,
+        "eff_freq_min": 3,
+        "eff_freq_avg": 4.912456767,
+        "eff_reach_net": 100103,
+        "eff_reach_pct": 0.03040449324
+    },
+    "total_msg_impressions": {
+        "measures_type": "Hourly",
+        "target_segment": "2032",
+        "target_geo": "GLOBAL",
+        "market": "GLOBAL",
+        "mon": {
+            "16": 104.6652,
+            "0": 1.945,
+            "23": 8.9485,
+            "1": 1.9912,
+            "2": 2.466,
+            "3": 3.9021,
+            "4": 6.0057,
+            "5": 8.8542,
+            "6": 22.8732,
+            "7": 42.6404,
+            "8": 45.6513,
+            "9": 46.9673,
+            "10": 59.4017,
+            "11": 68.5243,
+            "12": 83.876,
+            "13": 94.2039,
+            "14": 121.6313,
+            "15": 108.7477,
+            "17": 88.507,
+            "18": 55.5707,
+            "19": 80.6602,
+            "20": 47.1325,
+            "21": 21.6295,
+            "22": 14.1046
+        },
+        "tue": {
+            "16": 104.6652,
+            "0": 1.945,
+            "23": 8.9485,
+            "1": 1.9912,
+            "2": 2.466,
+            "3": 3.9021,
+            "4": 6.0057,
+            "5": 8.8542,
+            "6": 22.8732,
+            "7": 42.6404,
+            "8": 45.6513,
+            "9": 46.9673,
+            "10": 59.4017,
+            "11": 68.5243,
+            "12": 83.876,
+            "13": 94.2039,
+            "14": 121.6313,
+            "15": 108.7477,
+            "17": 88.507,
+            "18": 55.5707,
+            "19": 80.6602,
+            "20": 47.1325,
+            "21": 21.6295,
+            "22": 14.1046
+        },
+        "wed": {
+            "16": 104.6652,
+            "0": 1.945,
+            "23": 8.9485,
+            "1": 1.9912,
+            "2": 2.466,
+            "3": 3.9021,
+            "4": 6.0057,
+            "5": 8.8542,
+            "6": 22.8732,
+            "7": 42.6404,
+            "8": 45.6513,
+            "9": 46.9673,
+            "10": 59.4017,
+            "11": 68.5243,
+            "12": 83.876,
+            "13": 94.2039,
+            "14": 121.6313,
+            "15": 108.7477,
+            "17": 88.507,
+            "18": 55.5707,
+            "19": 80.6602,
+            "20": 47.1325,
+            "21": 21.6295,
+            "22": 14.1046
+        },
+        "thu": {
+            "16": 104.6652,
+            "0": 1.945,
+            "23": 8.9485,
+            "1": 1.9912,
+            "2": 2.466,
+            "3": 3.9021,
+            "4": 6.0057,
+            "5": 8.8542,
+            "6": 22.8732,
+            "7": 42.6404,
+            "8": 45.6513,
+            "9": 46.9673,
+            "10": 59.4017,
+            "11": 68.5243,
+            "12": 83.876,
+            "13": 94.2039,
+            "14": 121.6313,
+            "15": 108.7477,
+            "17": 88.507,
+            "18": 55.5707,
+            "19": 80.6602,
+            "20": 47.1325,
+            "21": 21.6295,
+            "22": 14.1046
+        },
+        "fri": {
+            "16": 306.387,
+            "0": 3.1407,
+            "23": 10.9309,
+            "1": 3.0309,
+            "2": 3.4913,
+            "3": 4.9581,
+            "4": 7.4025,
+            "5": 11.168,
+            "6": 24.1409,
+            "7": 47.2611,
+            "8": 55.4073,
+            "9": 56.9931,
+            "10": 61.7784,
+            "11": 72.2067,
+            "12": 91.3343,
+            "13": 119.7118,
+            "14": 204.7374,
+            "15": 271.6335,
+            "17": 256.2942,
+            "18": 143.9799,
+            "19": 118.5306,
+            "20": 55.1501,
+            "21": 26.9983,
+            "22": 16.3649
+        },
+        "sat": {
+            "16": 119.0891,
+            "0": 5.9179,
+            "23": 10.6085,
+            "1": 5.4012,
+            "2": 4.9428,
+            "3": 5.3432,
+            "4": 7.1372,
+            "5": 7.2859,
+            "6": 15.8923,
+            "7": 34.9228,
+            "8": 60.0283,
+            "9": 79.9648,
+            "10": 94.3997,
+            "11": 106.9839,
+            "12": 121.1266,
+            "13": 142.5048,
+            "14": 146.1712,
+            "15": 147.0486,
+            "17": 87.826,
+            "18": 67.6795,
+            "19": 56.4296,
+            "20": 42.7292,
+            "21": 28.7425,
+            "22": 20.1187
+        },
+        "sun": {
+            "16": 74.8528,
+            "0": 6.1361,
+            "23": 5.0881,
+            "1": 5.5246,
+            "2": 4.8255,
+            "3": 4.6386,
+            "4": 5.8287,
+            "5": 4.695,
+            "6": 6.8126,
+            "7": 15.1275,
+            "8": 27.0525,
+            "9": 37.1368,
+            "10": 61.0023,
+            "11": 64.9546,
+            "12": 66.3299,
+            "13": 62.7938,
+            "14": 60.5499,
+            "15": 64.6325,
+            "17": 82.5353,
+            "18": 54.2426,
+            "19": 33.2299,
+            "20": 22.2203,
+            "21": 10.0552,
+            "22": 7.0277
+        }
+    }
+}
+```
+
+The following equation can identify the hourly impressions for the digital spot:
+
+```spot.measures.day.hour.impressions_per_play * ((3600*layout.share_of_voice)/(spot.length/spot.share_of_voice))```
+
+In this case for FRI Hour 17 ```"17": 256.2942,``` the equation would be as follows:
+
+````256.2942 * ((3600*1)/(8/.125))````
+
+Which equals ```14416.54875```
+
+Note that the layout share of voice is found as part of the frame object.

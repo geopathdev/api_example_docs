@@ -2,9 +2,128 @@
 
 #### The Segment Reference Product allows you to search the thousands of audiences Geopath offers that can be used in the other inventory search endpoints.
 
-#### There are currently 3 endpoints within the Segement Reference Endpoint. A GET endpoint to search the entire catalog, A POST endpoint to provide a list of segment IDs and get information about them, and a GET endpoint to get information about a single segment ID.
+#### There are currently 3 endpoints within the Segment Reference Endpoint. A GET endpoint to search the entire catalog, A POST endpoint to provide a list of segment IDs and get information about them, and a GET endpoint to get information about a single segment ID.
 
-#### The catalog search endpoint has many possible parameters to filter down possible results. This [document](http://api-docs.geopath.org/content/audience-demographics-behaviors-and-consumer-profile-segmentation) provides an overview of the hierarchy of audience sements
+##### A Good way to start understanding the hierarchy in a functional way and to break down sources, categories and subcategories is to ask the call to return without the segments.
+
+###### Call:
+_This call sets the exclude_segments parameter to true, to display only the sources, categories and subcategories._
+
+```https://api.geopath.org/v2.1/segments/catalog?exclude_segments=true```
+
+###### Response:
+_This response exlcudes the details of each segment, showing instead the overview of the audiences available with their ids. This response has been truncated for length_
+```json
+{
+    "sources": [
+        {
+            "id": 1,
+            "name": "Claritas",
+            "version": "2018",
+            "description": "Claritas segments",
+            "categories": [
+                {
+                    "id": 2,
+                    "name": "PRIZMPremier",
+                    "description": "PRIZMPremier",
+                    "subcategories": [
+                        {
+                            "id": 14,
+                            "name": "Mainstream Families",
+                            "description": "Mainstream Families",
+                            "segments": null
+                        },
+                        {
+                            "id": 11,
+                            "name": "Affluent Empty Nests",
+                            "description": "Affluent Empty Nests",
+                            "segments": null
+                        },
+                        {
+                            "id": 12,
+                            "name": "Cautious Couples",
+                            "description": "Cautious Couples",
+                            "segments": null
+                        },
+                        {
+                            "id": 20,
+                            "name": "Young Achievers",
+                            "description": "Young Achievers",
+                            "segments": null
+                        },
+                        {
+                            "id": 17,
+                            "name": "Sustaining Families",
+                            "description": "Sustaining Families",
+                            "segments": null
+                        },
+                        {
+                            "id": 15,
+                            "name": "Midlife Success",
+                            "description": "Midlife Success",
+                            "segments": null
+                        },
+                        {
+                            "id": 10,
+                            "name": "Accumulated Wealth",
+                            "description": "Accumulated Wealth",
+                            "segments": null
+                        },
+                        {
+                            "id": 19,
+                            "name": "Young Accumulators",
+                            "description": "Young Accumulators",
+                            "segments": null
+                        },
+                        {
+                            "id": 16,
+                            "name": "Striving Singles",
+                            "description": "Striving Singles",
+                            "segments": null
+                        },
+                        {
+                            "id": 13,
+                            "name": "Conservative Classics",
+                            "description": "Conservative Classics",
+                            "segments": null
+                        },
+                        {
+                            "id": 18,
+                            "name": "Sustaining Seniors",
+                            "description": "Sustaining Seniors",
+                            "segments": null
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "name": "ConsumerProfiles",
+                    "description": "ConsumerProfiles",
+                    "subcategories": [
+                        {
+                            "id": 34,
+                            "name": "MRI Home Improvements",
+                            "description": "MRI Home Improvements",
+                            "segments": null
+                        },
+                        {
+                            "id": 28,
+                            "name": "Food and Beverages",
+                            "description": "Food and Beverages",
+                            "segments": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Radio",
+                            "description": "Radio",
+                            "segments": null
+                        },
+                        etc...
+```
+
+#### The catalog search endpoint has many possible parameters to filter down possible results. This [document](http://api-docs.geopath.org/content/audience-demographics-behaviors-and-consumer-profile-segmentation) provides an overview of the hierarchy of audience segments.
+
+
 
 ###### Call:
 _This call provides all endpoints that include the term '25-54'. The text search parameter "q=" works best when using a single string with no spaces._
