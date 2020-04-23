@@ -4,7 +4,7 @@
 ##### 1. Using the `/inventory/{frame_id}` endpoint to return information about a single frame record and it's children.
 ###### Call
 _This is a GET call where you specify a frame id in the url_
-`https://api.geopath.org/v2.1/inventory/spot/30649897`
+`https://api.geopath.org/v2.1/inventory/30649897`
 ###### Response:
 _The response only includes information about the Frame and any child spots. This example is a Digital Bulletin that includes 8 spots._
 ```json

@@ -1,8 +1,8 @@
-##Use Case: Obtaining measures for a set of units with different dates
+## Use Case: Obtaining measures for a set of units with different dates
 #### These example use the `/measures/summary` endpoint to combine audience segments, markets, inventory and time to get measures
 
-######Call:
-_These 3 calls are taking the same batch of 5 Bulletins and getting the Hispanic 18+ measures for a 1,2, & 4 week period in the New York CBSA with 3 minimum frequency. These are seperated out because you cannot have the same inventory returned for overlapping dates in a single call.
+###### Call:
+_These 3 calls are taking the same batch of 5 Bulletins and getting the Hispanic 18+ measures for a 1,2, & 4 week period in the New York CBSA with 3 minimum frequency. These are separated out because you cannot have the same inventory returned for overlapping dates in a single call.
 ```json
 {
     "base_segment": "2032",
@@ -87,7 +87,7 @@ _These 3 calls are taking the same batch of 5 Bulletins and getting the Hispanic
     ]
 }
 ```
-######Response:
+###### Response:
 _This is the response for the 1-week campaign, the other responses will be identical in structure with different measures depending on the time. It breaks down the measures by overall, by batch (will list multiple if there are multiple batches) and each spot in each batch individually._
 ```json
 {
