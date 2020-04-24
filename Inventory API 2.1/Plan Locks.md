@@ -303,7 +303,7 @@ _This call is locking the amount of inventory for a specific operators bulletins
 ```json
 {
     "target_geography_list": [
-        "DMA515"
+        "DMA501"
     ],
     "target_segment": 2032,
     "media_type_group_list": [
@@ -328,7 +328,7 @@ _This call is locking the amount of inventory for a specific operators bulletins
             ],
             "lock": {
                 "measure": "spots",
-                "value": 1
+                "value": 15
             }
         },
         {
@@ -349,16 +349,13 @@ _This call is locking the amount of inventory for a specific operators bulletins
             ],
             "media_type_list": [
                 "Poster"
-            ],
-            "lock": {
-                "measure": "spots",
-                "value": 1
-            }
+            ]
         },
         {
             "operator_name_list": [
                 "OUTFRONT"
             ],
+            "frame_media_name_list": [],
             "measures_range_list": [
                 {
                     "type": "index_comp_target",
@@ -375,13 +372,14 @@ _This call is locking the amount of inventory for a specific operators bulletins
             ],
             "lock": {
                 "measure": "spots",
-                "value": 1
+                "value": 15
             }
         },
         {
             "operator_name_list": [
                 "OUTFRONT"
             ],
+            "frame_media_name_list": [],
             "measures_range_list": [
                 {
                     "type": "index_comp_target",
@@ -395,11 +393,7 @@ _This call is locking the amount of inventory for a specific operators bulletins
             ],
             "media_type_list": [
                 "Poster"
-            ],
-            "lock": {
-                "measure": "spots",
-                "value": 15
-            }
+            ]
         }
     ],
     "allocation_method": "equal",
