@@ -2,7 +2,7 @@
 
 #### With the launch of Geopath's new measurement system there is now an enhanced ability to see impressions per hour.
 
-##### Hourly impressions are available at the specific spot level for 0+ (2032), 5+(8293), 18+(7166) and 21+(8228) audiences. They are currently only available from the ```https://api.geopath.org/v2.1/inventory/spot/``` endpoint.
+##### Hourly impressions are available at the specific spot level for 0+ (2032), 5+(8293), 18+(7166) and 21+(8228) audiences. They are only available for the **Global market** and are not yet available for **local markets**. They are currently only available from the ```https://api.geopath.org/v2.1/inventory/spot/``` endpoint.
 
 ###### Call : 
 _The GET call for hourly impressions requires two parameters get passed. hourly_measures = true and target_segment, which needs to be one of the 4 supported audiences. This call is asking for the hourly measures for spot 631042 at the 0+ level._
