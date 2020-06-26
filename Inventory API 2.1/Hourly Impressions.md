@@ -540,3 +540,120 @@ In this case for FRI Hour 17 ```"17": 256.2942,``` the equation would be as foll
 Which equals ```14416.54875```
 
 Note that the layout share of voice is found as part of the frame object.
+
+### Use Case: Updating hourly measures for only updated inventory.
+
+##### If you've previously requested hourly measures and stored them locally, you may want to update them after inventory has been re-audited and the measures may have changed. In this case a combination of calls will help minimize the total calls needed to get the data.
+
+###### Call: 
+_Using the```/inventory/spot/id/search``` will limit the results only the spot ids grouped by their frame that match the search criteria. This endpoint provides the same search capability in the request as the regular ```inventory/search``` endpoint, and just limits the response. In this example, we're providing a narrow date range in the "updated_date_range" search parameter, along with the other search criteria._
+
+```
+{
+       "operator_name_list": [
+           "JCDecaux"
+       ],
+       "updated_date_range": {
+           "start_date": "2020-06-01T00:00:00.000Z",
+           "end_date": "2020-06-26T23:59:59.000Z"
+       }
+   }
+```
+
+###### Response:
+_The response includes the parent frame id with the spot ids that are on that frame, which match the search criteria._
+
+```json
+{
+    "inventory_summary": {
+        "inventory_count": 10,
+        "pagination": {
+            "page": 1,
+            "page_size": 1000,
+            "number_of_pages": 1,
+            "number_of_frames": 10,
+            "number_of_spots": 26
+        },
+        "frame_list": [
+            {
+                "frame_id": 30982353,
+                "spot_id_list": [
+                    30982353
+                ]
+            },
+            {
+                "frame_id": 30982352,
+                "spot_id_list": [
+                    30982352
+                ]
+            },
+            {
+                "frame_id": 30982351,
+                "spot_id_list": [
+                    30982351
+                ]
+            },
+            {
+                "frame_id": 30972554,
+                "spot_id_list": [
+                    30982273,
+                    30972554
+                ]
+            },
+            {
+                "frame_id": 30972333,
+                "spot_id_list": [
+                    30974388,
+                    30974389,
+                    30974391,
+                    30972333,
+                    30974390,
+                    30974387
+                ]
+            },
+            {
+                "frame_id": 30972332,
+                "spot_id_list": [
+                    30974325,
+                    30974323,
+                    30974322,
+                    30974321,
+                    30974324,
+                    30972332
+                ]
+            },
+            {
+                "frame_id": 30569647,
+                "spot_id_list": [
+                    30975092,
+                    30975093,
+                    30569647
+                ]
+            },
+            {
+                "frame_id": 559507,
+                "spot_id_list": [
+                    559507
+                ]
+            },
+            {
+                "frame_id": 409424,
+                "spot_id_list": [
+                    30982272,
+                    409424
+                ]
+            },
+            {
+                "frame_id": 406616,
+                "spot_id_list": [
+                    30974886,
+                    406616,
+                    30974887
+                ]
+            }
+        ]
+    }
+}
+```
+
+##### You can use these results to identify the spots that need to have their hourly measures pulled again. As an added efficiency, if you know that the spots are the same length of time and have the same layout share of voice, the measures will the same, so you'd be able to pull the measures for a single spot on that frame and apply them to the other spots on the frame. 
