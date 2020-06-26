@@ -656,4 +656,4 @@ _The response includes the parent frame id with the spot ids that are on that fr
 }
 ```
 
-##### You can use these results to identify the spots that need to have their hourly measures pulled again. As an added efficiency, if you know that the spots are the same length of time and have the same layout share of voice, the measures will the same, so you'd be able to pull the measures for a single spot on that frame and apply them to the other spots on the frame. 
+##### You can use these results to identify the spots that need to have their hourly measures pulled again as illustrated in the initial use case above. As an added efficiency, if you know that the spots are the same length of time and have the same layout share of voice, the measures will the same, so you'd be able to pull the measures for a single spot on that frame and apply them to the other spots on the frame. 
