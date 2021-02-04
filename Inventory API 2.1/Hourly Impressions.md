@@ -2,79 +2,22 @@
 
 #### With the launch of Geopath's new measurement system there is now an enhanced ability to see impressions per hour.
 
-##### Hourly impressions are available at the specific spot level for 0+ (2032), 5+(8293), 18+(7166) and 21+(8228) audiences. They are only available for the **Global market** and are not yet available for **local markets**. They are currently only available from the ```https://api.geopath.org/v2.1/inventory/spot/``` endpoint.
+##### Hourly impressions are available at the specific spot level for 0+ (2032), 5+(8293), 18+(7166) and 21+(8228) audiences. They are only available for the **Global market** and are not yet available for **local markets**. They are available from the ```https://api.geopath.org/v2.1/inventory/spot/``` endpoint and the ```https://api-docs.geopath.org/inventory-api-2-11/apis/post/inventory/search``` endpoint.
 
 ###### Call : 
 _The GET call for hourly impressions requires two parameters get passed. hourly_measures = true and target_segment, which needs to be one of the 4 supported audiences. This call is asking for the hourly measures for spot 631042 at the 0+ level._
 
-```https://api-staging.geopath.org/v2.1/inventory/spot/631042?hourly_measures=true&target_segment=2032```
+```https://api.geopath.org/v2.1/inventory/spot/631042?hourly_measures=true&target_segment=2032```
 
 ###### Response:
-_The response includes total_msg_impressions (aka impressions per play) for each hour of each day of the week as well as information about the spot. This response is for a static piece of inventory._
+_The response includes total_msg_impressions (aka impressions per play) for each hour of each day of the week as well as information about the spot. This response is for a static piece of inventory. This response has been edited for length._
 
 ```json
 {
     "id": 631042,
-    "frame_uri": "{{api.basepath}}/v2.1/inventory/631042",
-    "publisher_unique_id": null,
-    "length": null,
-    "full_motion": false,
-    "partial_motion": false,
-    "rotating": false,
-    "interactive": false,
-    "audio": false,
-    "share_of_voice": 1.0,
-    "plant_spot_id": "FF   0081500O",
-    "created_dtm": "2005-09-03T00:00:00.000Z",
-    "updated_dtm": "2011-10-11T13:07:00.000Z",
-    "updated_desc": null,
-    "representations": [
-        {
-            "id": 228,
-            "updated_desc": null,
-            "representation_type": {
-                "id": 1,
-                "name": "Own",
-                "description": "the owner or leaseholder of an asset who may also manage that asset",
-                "updated_desc": null
-            },
-            "account": {
-                "id": 559,
-                "name": "New Jersey",
-                "operator_code": "FF",
-                "parent_account_id": 19,
-                "parent_account_name": "OUTFRONT",
-                "updated_desc": null
-            }
-        }
-    ],
+    ...
     "measures": {
-        "measures_type": "Measures",
-        "period_days": 7,
-        "base_segment": "2032",
-        "target_segment": "2032",
-        "target_geo": "Defaulted to GLOBAL",
-        "market": "Defaulted to GLOBAL",
-        "index_comp_target": 100.0,
-        "pct_comp_pop_target_inmkt": 1.0,
-        "pct_comp_imp_target": 1.0,
-        "pct_comp_imp_target_inmkt": 1.0,
-        "freq_avg": 3.525678471,
-        "imp_target_inmkt": 74412.270434219,
-        "imp_target": 74412.270434219,
-        "imp_inmkt": 74412.270434219,
-        "imp": 74412.270434219,
-        "pct_imp_inmkt": 1.0,
-        "pct_imp_target_inmkt": 1.0,
-        "pop_inmkt": 329236175,
-        "pop_target_inmkt": 329236175,
-        "reach_pct": 0.006410535426,
-        "reach_net": 21106,
-        "trp": 0.02260148674,
-        "eff_freq_min": 3,
-        "eff_freq_avg": 5.166433935,
-        "eff_reach_net": 14403,
-        "eff_reach_pct": 0.004374678361
+        ...
     },
     "total_msg_impressions": {
         "measures_type": "Hourly",
@@ -277,66 +220,12 @@ _The Response is also the same format. An important change is that the share_of_
 ```json
 {
     "id": 45821,
-    "uri": "{{api.basepath}}/v2.1/inventory/spot/45821",
-    "publisher_unique_id": null,
-    "length": 8,
-    "full_motion": false,
-    "partial_motion": false,
-    "rotating": false,
-    "interactive": false,
-    "audio": false,
+    ...
     "share_of_voice": 0.125,
-    "plant_spot_id": "059472-A",
-    "created_dtm": "2019-08-13T16:23:00.000Z",
-    "updated_dtm": "2019-10-31T20:42:46.014Z",
-    "updated_desc": null,
-    "representations": [
-        {
-            "id": 35,
-            "updated_desc": null,
-            "representation_type": {
-                "id": 1,
-                "name": "Own",
-                "description": "the owner or leaseholder of an asset who may also manage that asset",
-                "updated_desc": null
-            },
-            "account": {
-                "id": 339,
-                "name": "Las Vegas",
-                "operator_code": "006",
-                "parent_account_id": 1,
-                "parent_account_name": "Clear Channel",
-                "updated_desc": null
-            }
-        }
-    ],
+    ...
+    
     "measures": {
-        "measures_type": "Measures",
-        "period_days": 7,
-        "base_segment": "2032",
-        "target_segment": "2032",
-        "target_geo": "Defaulted to GLOBAL",
-        "market": "Defaulted to GLOBAL",
-        "index_comp_target": 100.0,
-        "pct_comp_pop_target_inmkt": 1.0,
-        "pct_comp_imp_target": 1.0,
-        "pct_comp_imp_target_inmkt": 1.0,
-        "freq_avg": 1.123343541,
-        "imp_target_inmkt": 491749.648359316,
-        "imp_target": 491749.648359316,
-        "imp_inmkt": 491749.648359316,
-        "imp": 491749.648359316,
-        "pct_imp_inmkt": 1.0,
-        "pct_imp_target_inmkt": 1.0,
-        "pop_inmkt": 329236175,
-        "pop_target_inmkt": 329236175,
-        "reach_pct": 0.1329608914,
-        "reach_net": 437755,
-        "trp": 0.1493607585,
-        "eff_freq_min": 3,
-        "eff_freq_avg": 4.912456767,
-        "eff_reach_net": 100103,
-        "eff_reach_pct": 0.03040449324
+      ...
     },
     "total_msg_impressions": {
         "measures_type": "Hourly",
@@ -543,10 +432,10 @@ Note that the layout share of voice is found as part of the frame object.
 
 ### Use Case: Updating hourly measures for only updated inventory.
 
-##### If you've previously requested hourly measures and stored them locally, you may want to update them after inventory has been re-audited and the measures may have changed. In this case a combination of calls will help minimize the total calls needed to get the data.
+##### If you've previously requested hourly measures and stored them locally, you may want to update them after inventory has been re-audited and the measures may have changed. In this case using the ```inventory/search``` endpoint will return hourly measures for multiple pieces of inventory.
 
 ###### Call: 
-_Using the```/inventory/spot/id/search``` will limit the results only the spot ids grouped by their frame that match the search criteria. This endpoint provides the same search capability in the request as the regular ```inventory/search``` endpoint, and just limits the response. In this example, we're providing a narrow date range in the "updated_date_range" search parameter, along with the other search criteria._
+_This call is similar to other ```inventory/search``` calls, but adds the parameter "hourly_measures":true which tells the search that the request wants hourly measures. All other search parameters are available which is why the request is able to narrow it down to a specific date range and operator. It is important to remember that the hourly measures are still only available for core audiences and one of those audiences must be specified in the "target_segment" parameter._
 
 ```
 {
@@ -557,103 +446,233 @@ _Using the```/inventory/spot/id/search``` will limit the results only the spot i
            "start_date": "2020-06-01T00:00:00.000Z",
            "end_date": "2020-06-26T23:59:59.000Z"
        }
+       "measures_required":true,
+       "hourly_measures":true,
+       "target_segment":7166
    }
 ```
 
 ###### Response:
-_The response includes the parent frame id with the spot ids that are on that frame, which match the search criteria._
+_The response includes the standard ````inventory/search``` response, but the measures object is expanded to include the "total_msg_impressions" object which details the impressions per play per hour per day of week.This response has been edited for length._
 
 ```json
 {
-    "inventory_summary": {
-        "inventory_count": 10,
-        "pagination": {
-            "page": 1,
-            "page_size": 1000,
-            "number_of_pages": 1,
-            "number_of_frames": 10,
-            "number_of_spots": 26
-        },
-        "frame_list": [
-            {
-                "frame_id": 30982353,
-                "spot_id_list": [
-                    30982353
-                ]
+  "inventory_summary": {
+...
+    "inventory_items": [
+      {
+        ...
+        "spot_references": [
+          {
+            "spot_id": 30982353,
+            ....
+            "measures": {
+              ...
             },
-            {
-                "frame_id": 30982352,
-                "spot_id_list": [
-                    30982352
-                ]
+            ...
+            "total_msg_impressions": {
+              "measures_type": "Hourly",
+              "target_segment": "7166",
+              "target_geo": "GLOBAL",
+              "market": "GLOBAL",
+              "mon": {
+                "16": 1131.2798,
+                "0": 94.3905,
+                "1": 79.6523,
+                "2": 70.3266,
+                "14": 1006.1432,
+                "15": 1112.6215,
+                "11": 973.2092,
+                "12": 997.1305,
+                "22": 223.6841,
+                "23": 153.9694,
+                "3": 75.6762,
+                "13": 949.5033,
+                "21": 257.0081,
+                "20": 299.2611,
+                "8": 1321.3751,
+                "9": 1274.8309,
+                "7": 1408.9048,
+                "6": 924.4157,
+                "17": 1054.1251,
+                "10": 911.1408,
+                "4": 99.1228,
+                "5": 167.5246,
+                "19": 313.1573,
+                "18": 792.7066
+              },
+              "tue": {
+                "16": 1131.2798,
+                "0": 94.3905,
+                "1": 79.6523,
+                "2": 70.3266,
+                "14": 1006.1432,
+                "15": 1112.6215,
+                "11": 973.2092,
+                "12": 997.1305,
+                "22": 223.6841,
+                "23": 153.9694,
+                "3": 75.6762,
+                "13": 949.5033,
+                "21": 257.0081,
+                "20": 299.2611,
+                "8": 1321.3751,
+                "9": 1274.8309,
+                "7": 1408.9048,
+                "6": 924.4157,
+                "17": 1054.1251,
+                "10": 911.1408,
+                "4": 99.1228,
+                "5": 167.5246,
+                "19": 313.1573,
+                "18": 792.7066
+              },
+              "wed": {
+                "16": 1131.2798,
+                "0": 94.3905,
+                "1": 79.6523,
+                "2": 70.3266,
+                "14": 1006.1432,
+                "15": 1112.6215,
+                "11": 973.2092,
+                "12": 997.1305,
+                "22": 223.6841,
+                "23": 153.9694,
+                "3": 75.6762,
+                "13": 949.5033,
+                "21": 257.0081,
+                "20": 299.2611,
+                "8": 1321.3751,
+                "9": 1274.8309,
+                "7": 1408.9048,
+                "6": 924.4157,
+                "17": 1054.1251,
+                "10": 911.1408,
+                "4": 99.1228,
+                "5": 167.5246,
+                "19": 313.1573,
+                "18": 792.7066
+              },
+              "thu": {
+                "16": 1131.2798,
+                "0": 94.3905,
+                "1": 79.6523,
+                "2": 70.3266,
+                "14": 1006.1432,
+                "15": 1112.6215,
+                "11": 973.2092,
+                "12": 997.1305,
+                "22": 223.6841,
+                "23": 153.9694,
+                "3": 75.6762,
+                "13": 949.5033,
+                "21": 257.0081,
+                "20": 299.2611,
+                "8": 1321.3751,
+                "9": 1274.8309,
+                "7": 1408.9048,
+                "6": 924.4157,
+                "17": 1054.1251,
+                "10": 911.1408,
+                "4": 99.1228,
+                "5": 167.5246,
+                "19": 313.1573,
+                "18": 792.7066
+              },
+              "fri": {
+                "16": 1158.0417,
+                "0": 110.9726,
+                "1": 92.3966,
+                "2": 80.0768,
+                "14": 1384.5434,
+                "15": 1157.2485,
+                "11": 1350.9833,
+                "12": 1378.5591,
+                "22": 261.1661,
+                "23": 180.4019,
+                "3": 84.0225,
+                "13": 1307.4858,
+                "21": 296.1627,
+                "20": 322.397,
+                "8": 1146.2829,
+                "9": 1132.8448,
+                "7": 1173.1396,
+                "6": 784.5024,
+                "17": 1077.6308,
+                "10": 1267.0019,
+                "4": 108.7172,
+                "5": 185.2344,
+                "19": 323.712,
+                "18": 841.4123
+              },
+              "sat": {
+                "16": 887.9549,
+                "0": 114.267,
+                "1": 96.9079,
+                "2": 83.0552,
+                "14": 1399.7035,
+                "15": 911.6171,
+                "11": 1639.0963,
+                "12": 1597.8309,
+                "22": 278.0859,
+                "23": 198.5225,
+                "3": 83.1713,
+                "13": 1464.7111,
+                "21": 323.2888,
+                "20": 377.6244,
+                "8": 811.7533,
+                "9": 944.6749,
+                "7": 596.1,
+                "6": 378.9719,
+                "17": 843.3488,
+                "10": 1586.5352,
+                "4": 104.0201,
+                "5": 157.6738,
+                "19": 403.5978,
+                "18": 718.2194
+              },
+              "sun": {
+                "16": 741.3594,
+                "0": 176.1774,
+                "1": 154.8591,
+                "2": 133.9085,
+                "14": 815.2282,
+                "15": 762.7699,
+                "11": 879.8753,
+                "12": 908.3486,
+                "22": 260.4141,
+                "23": 188.4866,
+                "3": 128.6869,
+                "13": 844.2384,
+                "21": 310.2316,
+                "20": 432.1372,
+                "8": 719.4149,
+                "9": 879.1185,
+                "7": 502.3611,
+                "6": 316.7723,
+                "17": 704.4131,
+                "10": 832.7391,
+                "4": 152.3037,
+                "5": 181.8324,
+                "19": 493.0984,
+                "18": 597.6113
+              }
             },
-            {
-                "frame_id": 30982351,
-                "spot_id_list": [
-                    30982351
-                ]
-            },
-            {
-                "frame_id": 30972554,
-                "spot_id_list": [
-                    30982273,
-                    30972554
-                ]
-            },
-            {
-                "frame_id": 30972333,
-                "spot_id_list": [
-                    30974388,
-                    30974389,
-                    30974391,
-                    30972333,
-                    30974390,
-                    30974387
-                ]
-            },
-            {
-                "frame_id": 30972332,
-                "spot_id_list": [
-                    30974325,
-                    30974323,
-                    30974322,
-                    30974321,
-                    30974324,
-                    30972332
-                ]
-            },
-            {
-                "frame_id": 30569647,
-                "spot_id_list": [
-                    30975092,
-                    30975093,
-                    30569647
-                ]
-            },
-            {
-                "frame_id": 559507,
-                "spot_id_list": [
-                    559507
-                ]
-            },
-            {
-                "frame_id": 409424,
-                "spot_id_list": [
-                    30982272,
-                    409424
-                ]
-            },
-            {
-                "frame_id": 406616,
-                "spot_id_list": [
-                    30974886,
-                    406616,
-                    30974887
-                ]
-            }
-        ]
+            ...
+          }
+        ],
+        ....
+      },
+      .....
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "page_size": 100,
+      "number_of_pages": 1,
+      "number_of_frames": 4,
+      "number_of_spots": 6
     }
+  }
 }
 ```
-
-##### You can use these results to identify the spots that need to have their hourly measures pulled again as illustrated in the initial use case above. As an added efficiency, if you know that the spots are the same length of time and have the same layout share of voice, the measures will the same, so you'd be able to pull the measures for a single spot on that frame and apply them to the other spots on the frame. 
